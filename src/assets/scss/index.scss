@@ -1,0 +1,310 @@
+@import 'variables';
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    background-color: #f1f1f2;
+}
+
+html {
+    /* font-size: 62.5%; */
+}
+
+// ghi de ant
+.ant-table-cell {
+    text-align: center !important;
+}
+
+.custom-bg-header {
+    background-color: $primary-color;
+}
+
+.form-control:focus {
+    border-color: red;
+    /* Thay đổi màu viền khi trường input được chọn */
+    box-shadow: none;
+    /* Loại bỏ hiệu ứng bóng đổ (shadow) khi trường input được chọn */
+}
+
+.ant-select-selection-overflow-item .ant-select-selection-item {
+    background-color: $warning-color !important;
+}
+
+// }
+
+// gi de rsuite
+.rs-dropdown-item.rs-dropdown-item-active {
+    background-color: #dfdddd !important;
+
+}
+
+.rs-dropdown-toggle.rs-sidenav-item {
+    background-color: $secondary-color !important;
+
+}
+
+.cardHover {
+    box-shadow: none;
+    transition: .25s;
+    cursor: pointer;
+}
+
+.cardHover:hover {
+    border: 0px solid transparent;
+    border-radius: 5px;
+    /* Ví dụ: viền đỏ */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    /* Ví dụ: viền đỏ */
+}
+
+.bg-white {
+    background-color: $white-color;
+}
+
+.bg-main {
+    background-color: $main-color;
+}
+
+.bg-error {
+    transition: .25s;
+    background-color: $error-color;
+}
+
+.bg-grey {
+    background-color: $secondary-color;
+}
+
+.bg-hover-red {
+    &:hover {
+        background-color: $error-color;
+    }
+}
+
+.color-hover-green {
+    transition: .25s;
+
+    &:hover {
+        color: $success-color !important;
+    }
+}
+
+.bg-hover-green {
+    transition: .25s;
+
+    &:hover {
+        background-color: $success-color !important;
+    }
+}
+
+.bg-gradient-blue-purple {
+    background: linear-gradient(to right, #0000FF, #800080) !important;
+    color: #fff !important;
+}
+
+.bg-gradient-orange-red {
+    background: linear-gradient(to right, $main-color, $error-color) !important;
+    color: #fff !important;
+}
+
+.blur-background {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Màu nền mờ */
+    backdrop-filter: blur(5px);
+    /* Hiệu ứng mờ */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    /* Đảm bảo lớp mờ nằm phía trên các phần tử khác */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textColorRed {
+    color: $error-color;
+}
+
+.nameListTitle {
+    text-align: center;
+    transition: .25s;
+    padding: 4px !important;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.nameListTitle:hover {
+    background-color: $primary-color;
+    color: $white-color;
+}
+
+.logout.nameListTitle:hover {
+    background-color: $error-color;
+    color: $white-color;
+}
+
+.btn-create {
+    background-color: $white-color;
+    color: #000;
+}
+
+.name-tab-nav {
+    font-weight: bold;
+    transition: .25s;
+    padding: 8px 12px;
+    border-radius: 8px;
+
+    &:hover {
+        color: black;
+        background-color: #ccc;
+    }
+}
+
+.active-tab {
+    color: red !important; // Sử dụng màu đỏ cho tab khi nó được kích hoạt
+}
+
+.fixed-bottom {
+    transform: translateY(100%);
+    /* Mặc định, modal sẽ nằm dưới màn hình */
+    transition: transform 0.3s ease-in-out;
+    /* Hiệu ứng transition kéo dài 0.5s */
+}
+
+.fixed-bottom.show {
+    transform: translateY(0);
+    /* Khi modal được hiển thị, nó sẽ di chuyển lên màn hình */
+}
+
+.titleMyCartContent {
+    font-size: 32px;
+    // font-weight: bold;
+    opacity: 0.8;
+}
+
+.name-cate {
+    position: relative;
+    color: #000;
+    transition: color 0.2s;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 8px;
+    margin-top: 20px;
+
+    &:hover {
+        color: red !important;
+        cursor: pointer;
+    }
+}
+
+.name-cate::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background-color: #000;
+}
+
+.name-filter {
+    background-color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.name-filter+.name-filter {
+    margin-left: 10px;
+}
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    width: 24px;
+}
+
+// tat css tiny
+.tox-statusbar__branding {
+    display: none;
+}
+
+.tox-notification.tox-notification--in.tox-notification--warning {
+    display: none;
+}
+
+.ant-table-thead {
+    background-color: $error-color !important;
+}
+
+// Css swiper
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper {
+    width: 100%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.swiper-slide {
+    background-size: cover;
+    background-position: center;
+}
+
+.mySwiper2 {
+    height: 80%;
+    width: 100%;
+}
+
+.mySwiper {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    background-color: #f1f1f2;
+}
+
+.mySwiper .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+    opacity: 1;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
