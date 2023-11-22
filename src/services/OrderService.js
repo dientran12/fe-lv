@@ -12,6 +12,7 @@ export const createOreder = async ({ token, ...data }) => {
             token: `Beare ${token}`
         }
     })
+    console.log('dataCaerte', res)
     return res.data
 }
 

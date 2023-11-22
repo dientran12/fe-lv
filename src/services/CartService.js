@@ -1,8 +1,8 @@
 import axios from "axios"
 import { axiosJWT } from "./UserService"
 
-export const addProductToCart = async ({ sizeItemId, userId, token, quantity }) => {
-    const res = await axios.post(`${process.env.REACT_APP_API_URL_BACKEND}/cart/addtocart/${userId}/${sizeItemId}`, quantity, {
+export const addProductToCart = async ({ sizeItemId, userId, token }) => {
+    const res = await axios.post(`${process.env.REACT_APP_API_URL_BACKEND}/cart/addtocart`, { userId, sizeItemId }, {
         headers: {
             token: `Beare ${token}`
         }

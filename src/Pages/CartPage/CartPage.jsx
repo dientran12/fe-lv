@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import ButtonBuyProduct from "~/components/ButtonComponent/ButtonBuyProduct";
 import CardProductCart from "~/components/CardComponent/CardProductCart";
 import * as CartService from '~/services/CartService'
+import { formatCurrency } from "~/utils";
 
 export default function CartPage() {
     const user = useSelector((state) => {
@@ -55,7 +56,7 @@ export default function CartPage() {
             let newTotalPrice = 0;
             for (let i = 0; i < cartItems?.length; i++) {
                 if (checkedItems[i]) {
-                    newTotalPrice += parseFloat(cartItems[i].price) * quantities[i];
+                    newTotalPrice += parseFloat(cartItems[i].discountedPrice ? cartItems[i]?.discountedPrice : cartItems[i].productdata?.Version?.Product?.price) * quantities[i];
                 }
             }
             setTotalPrice(newTotalPrice);
@@ -97,7 +98,8 @@ export default function CartPage() {
 
         const newArr = mergedArray.map(item => ({
             versionId: item.cartItem?.productdata?.Version.id,
-            sellingPrice: item.cartItem?.price,
+            sellingPrice: item.cartItem?.discountedPrice || item.cartItem?.productdata?.Version?.Product?.price,
+            price: item.cartItem?.productdata?.Version?.Product?.price,
             image: item.cartItem?.productdata?.Version.image,
             sizeItems: [{
                 sizeItemId: item.cartItem?.sizeItemId,
@@ -151,7 +153,7 @@ export default function CartPage() {
                                     onBuyClick={handleBuyClick} />
                                 <div className="me-3" style={{ fontSize: '18px', opacity: '0.9' }}>
                                     Total cost of goods({checkedItemsCount}):
-                                    <div style={{ color: 'red' }}>{totalPrice} đ</div>
+                                    <div style={{ color: 'red' }}>{formatCurrency(totalPrice)} đ</div>
                                 </div>
                             </MDBCol>
                         </MDBRow>

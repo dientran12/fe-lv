@@ -81,6 +81,7 @@ function DetailProductPage() {
             versionId: dataProduct[activeIndex]?.id,
             total: quantity,
             sellingPrice: detailProduct?.discountedPrice,
+            price: detailProduct?.price,
             image: dataProduct[activeIndex]?.image,
             sizeItems: [{
                 sizeName: dataProduct[activeIndex]?.SizeItems[selectedSizeSelect]?.Size.sizeName,

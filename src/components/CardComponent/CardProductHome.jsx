@@ -2,21 +2,13 @@ import React from 'react';
 import {
     MDBCard,
     MDBCardBody,
-    MDBCardTitle,
-    MDBCardText,
-    MDBCardImage,
     MDBBtn,
-    MDBCardLink,
-    MDBListGroupItem,
-    MDBListGroup,
     MDBTypography,
-    MDBIcon,
     MDBRow,
-    MDBCol,
     MDBCardFooter,
     MDBRipple
 } from 'mdb-react-ui-kit';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function CardProductHome({ product }) {
     const maxLength = 17;

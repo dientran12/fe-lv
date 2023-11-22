@@ -85,9 +85,17 @@ const CardProductCart = ({ item, index, isChecked, onCheckboxChange, onQuantityC
                         </div>
                     </div>
                     <div className="d-flex flex-row flex-grow-1  align-items-center">
-                        <MDBTypography tag="h6" className="mb-0">
-                            {formatCurrency(item.price)} x
-                        </MDBTypography>
+                        <div className="d-flex flex-column align-items-center">
+                            {item?.discountedPrice &&
+                                <MDBTypography tag='s' className="mb-0">
+                                    {formatCurrency(item?.productdata?.Version?.Product?.price)}
+                                </MDBTypography>
+                            }
+                            <MDBTypography tag="h6" className="mb-0" style={{ color: '#F44336' }}>
+                                {formatCurrency(item?.discountedPrice || item?.productdata?.Version?.Product?.price)}
+                            </MDBTypography>
+                        </div>
+                        <div className="mx-1">x</div>
                         <div className="d-flex align-items-center mx-2" style={{ minWidth: "20px", maxWidth: "50px" }}>
                             <MDBInput
                                 type="number"
@@ -99,7 +107,7 @@ const CardProductCart = ({ item, index, isChecked, onCheckboxChange, onQuantityC
                         </div>
                     </div>
                     <MDBTypography tag="h6" className="mb-0 text-danger">
-                        {formatCurrency(item.price * quantityValue)}
+                        {formatCurrency(item?.discountedPrice ? item?.discountedPrice * quantityValue : item?.productdata?.Version?.Product?.price * quantityValue)}
                     </MDBTypography>
                     <MDBIcon className="color-hover-green px-4 py-2" size='xl' fas icon="trash" onClick={handleOnDelete} style={{ color: 'red', cursor: 'pointer' }} />
                 </div>
